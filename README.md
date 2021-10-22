@@ -1,1 +1,1 @@
-# GEEKBRAINS: Базовый курс JavaScript
+# GEEKBRAINS: Основы языка JavaScript

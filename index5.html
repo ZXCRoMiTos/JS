@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №5</title>
+</head>
+<body>
+    <script>
+        
+        'use strick';
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+        
+        function adding(arg1, arg2) {
+            return arg1 + arg2;
+        }
+
+        function subtraction(arg1, arg2) {
+            return arg1 - arg2;
+        }
+
+        function multiplication(arg1, arg2) {
+            return arg1 * arg2;
+        }
+
+        function dividing(arg1, arg2) {
+            return arg1 / arg2;
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'сложение':
+                    return adding(arg1, arg2);
+                case 'вычитание':
+                    return subtraction(arg1, arg2);
+                case 'умножение':
+                    return multiplication(arg1, arg2);
+                case 'деление':
+                    return dividing(arg1, arg2);
+            }
+        }
+
+        let a = getRandomInt(10);
+        let b = getRandomInt(10);
+        alert(a);
+        alert(b);
+
+        alert(mathOperation(a, b, 'сложение'));
+        alert(mathOperation(a, b, 'вычитание'));
+        alert(mathOperation(a, b, 'умножение'));
+        alert(mathOperation(a, b, 'деление'));
+
+    </script>
+</body>
+</html>

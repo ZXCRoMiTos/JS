@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №6</title>
+</head>
+<body>
+    <script>
+
+        'use strick';
+        
+        function getRightForm(num) {
+
+            let n = Math.trunc(Math.abs(num)) % 100;
+            let n1 = n % 10;
+ 
+            if (n > 4 && n < 21) return 'рублей';
+            if (n1 === 1) return 'рубль';
+            if (n1 > 1 && n1 < 5) return 'рубля';
+
+            return 'рублей';
+        }
+
+        function createMessage(num) {
+            return 'Ваша сумма в ' + num + ' ' + getRightForm(num) + ' ' + 'успешно зачислена.';
+        }
+
+        a = prompt('Введите количество рублей: ');
+        alert(createMessage(a));
+
+    </script>
+</body>
+</html>

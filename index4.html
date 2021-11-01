@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №4</title>
+</head>
+
+<body>
+    <script>
+
+        'use strick';
+
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+
+        for (let i = 0; i < products.length; i++) {
+            if ('photos' in products[i] && products[i].photos.length > 0) {
+                console.log(products[i]);
+            }
+        }
+        
+        console.log(products.sort(function(a, b) {return a.price - b.price}));
+
+    </script>
+</body>
+
+</html>

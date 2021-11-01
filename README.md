@@ -1,1 +1,1 @@
-# GEEKBRAINS: Базовый курс JavaScript
+# GEEKBRAINS: Циклы, массивы, структуры данных

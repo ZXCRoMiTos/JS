@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №3</title>
+</head>
+
+<body>
+    <script>
+
+        'use strick';
+
+        function calculateDiscount(product) {
+            console.log(product.price * 0.85);
+        }
+
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        products.forEach(calculateDiscount);
+
+    </script>
+</body>
+
+</html>

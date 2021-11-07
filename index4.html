@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1.2</title>
+</head>
+
+<body>
+    <script>
+
+        'use strick';
+
+        class Post {
+
+            constructor (author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(str) {
+                if (typeof(str) === 'string') {
+                    this.text = str;
+                } else {
+                    console.log('Введите строку.')
+                }
+            }
+        }
+
+        class AttachedPost extends Post {
+
+            constructor (author, text, date) {
+                super(author, text, date);
+                this.highlighted = Boolean(false);
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = Boolean(true);
+            }
+        }
+
+        let a = new Post('Gaben', '123', '12-03-2021');
+        console.log(a.text);
+        a.edit(1);
+        a.edit('New text.');
+        console.log(a.text);
+
+        let b = new AttachedPost('Gaben', '1234', '12-03-2021');
+        console.log(b.text);
+        b.edit('Super new text.');
+        console.log(b.text);
+        console.log(b.highlighted);
+        b.makeTextHighlighted();
+        console.log(b.highlighted);
+    
+    </script>
+</body>
+
+</html>

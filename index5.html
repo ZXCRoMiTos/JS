@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1.2</title>
+</head>
+<body>
+    <script>
+
+        'use strick';
+        
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(str) {
+            if (typeof(str) === 'string') {
+                this.text = str;
+            } else {
+                console.log('Введите строку.');
+            }
+        };
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = Boolean(false);
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = Boolean(true);
+        };
+
+        let a = new Post('kek', 'test', '10-04-2002');
+        console.log(a.text);
+        a.edit(1);
+        a.edit('New test text.');
+        console.log(a.text);
+
+        let b = new AttachedPost('kekw', 'testing', '10-06-2002');
+        console.log(b.text);
+        b.edit(1);
+        b.edit('New test text.');
+        console.log(b.text);
+
+    </script>
+</body>
+</html>

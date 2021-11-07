@@ -1,1 +1,1 @@
-# GEEKBRAINS: Базовый курс JavaScript
+# GEEKBRAINS: Объекты в JavaScript

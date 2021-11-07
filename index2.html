@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1.1</title>
+</head>
+
+<body>
+    <script>
+
+        'use strick';
+
+        class Product {
+
+            constructor (name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let a = new Product('Kek', 1000);
+        console.log(a.price);
+        console.log(a.make25PercentDiscount());
+        console.log(a.price);
+
+    </script>
+</body>
+</html>

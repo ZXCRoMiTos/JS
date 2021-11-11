@@ -1,1 +1,1 @@
-# GEEKBRAINS: Базовый курс JavaScript
+# GEEKBRAINS: Введение в DOM

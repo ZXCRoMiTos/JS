@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <style>
+        i {
+            font-size: 50px;
+        }
+        .golden {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <i id="first" class="fas fa-star"></i>
+    <i id="second" class="fas fa-star"></i>
+    <i id="third" class="fas fa-star"></i>
+    <i id="fourth" class="fas fa-star"></i>
+    <i id="fifth" class="fas fa-star"></i>
+
+    <!-- Задание. Используя заготовку, сделайте чтобы при наведении на вторую звезду
+    подсвечивались первая и вторая звезды. При наведени на третью звезду подсвечивались
+    первая, вторая и третья звезды, и т.д. 
+    mouseover - это событие срабатывает когда мы наводим на элемент.
+    mouseout - это событие срабатывает когда мы перестаем наводить на элемент.
+	Вы можете пойти более продвинутым путем, и получать предыдущий элемент 
+	например с помощью https://mzl.la/3a4SPlR
+    -->
+
+    <script>
+
+        'use strict';
+
+        // let firstStar = document.getElementById('first');
+        // let secondStar = document.getElementById('second');
+        // let thirdStar = document.getElementById('third');
+        // let fourthStar = document.getElementById('fourth');
+        // let fifthStar = document.getElementById('fifth');
+
+        // firstStar.addEventListener('mouseover', function(event) {
+        //     firstStar.classList.add('golden');
+        // });
+
+        // firstStar.addEventListener('mouseout', function(event) {
+        //     firstStar.classList.remove('golden');
+        // });
+
+        // secondStar.addEventListener('mouseover', function(event) {
+        //     firstStar.classList.add('golden');
+        //     secondStar.classList.add('golden');
+        // });
+
+        // secondStar.addEventListener('mouseout', function(event) {
+        //     firstStar.classList.remove('golden');
+        //     secondStar.classList.remove('golden');
+        // });
+
+        // thirdStar.addEventListener('mouseover', function(event) {
+        //     firstStar.classList.add('golden');
+        //     secondStar.classList.add('golden');
+        //     thirdStar.classList.add('golden');
+        // });
+
+        // thirdStar.addEventListener('mouseout', function(event) {
+        //     firstStar.classList.remove('golden');
+        //     secondStar.classList.remove('golden');
+        //     thirdStar.classList.remove('golden');
+        // });
+
+        // fourthStar.addEventListener('mouseover', function(event) {
+        //     firstStar.classList.add('golden');
+        //     secondStar.classList.add('golden');
+        //     thirdStar.classList.add('golden');
+        //     fourthStar.classList.add('golden');
+        // });
+
+        // fourthStar.addEventListener('mouseout', function(event) {
+        //     firstStar.classList.remove('golden');
+        //     secondStar.classList.remove('golden');
+        //     thirdStar.classList.remove('golden');
+        //     fourthStar.classList.remove('golden');
+        // });
+
+        // fifthStar.addEventListener('mouseover', function(event) {
+        //     firstStar.classList.add('golden');
+        //     secondStar.classList.add('golden');
+        //     thirdStar.classList.add('golden');
+        //     fourthStar.classList.add('golden');
+        //     fifthStar.classList.add('golden');
+        // });
+
+        // fifthStar.addEventListener('mouseout', function(event) {
+        //     firstStar.classList.remove('golden');
+        //     secondStar.classList.remove('golden');
+        //     thirdStar.classList.remove('golden');
+        //     fourthStar.classList.remove('golden');
+        //     fifthStar.classList.remove('golden');
+        // });
+
+        function addGolden(event, index) {
+            if (index == 0) {
+                stars[index].classList.add('golden');
+            } else {
+                stars[index].classList.add('golden');
+                addGolden(event, index - 1);
+            }
+        }
+
+        let stars = document.querySelectorAll('i');
+        stars.forEach(function(star) {
+            star.addEventListener('mouseover', addGolden(event, stars.indexOf(star, 0)));
+            star.addEventListener('mouseout', function(event) {
+                star.classList.remove('golden');
+            });
+        });
+
+    </script>
+</body>
+</html>
